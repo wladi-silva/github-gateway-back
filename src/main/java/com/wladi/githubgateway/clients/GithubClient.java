@@ -13,7 +13,6 @@ import com.wladi.githubgateway.models.User;
 @FeignClient(name = "githubClient", url = "https://api.github.com", configuration = FeignConfiguration.class)
 public interface GithubClient {
 
-
     @GetMapping("/users/{username}")
     User getUser(@PathVariable String username);
 
