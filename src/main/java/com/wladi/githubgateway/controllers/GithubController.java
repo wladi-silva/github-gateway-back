@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wladi.githubgateway.clients.GithubClient;
+import com.wladi.githubgateway.exceptions.GithubEmptyRepositoriesException;
 import com.wladi.githubgateway.models.Repository;
 import com.wladi.githubgateway.models.User;
 
@@ -31,6 +32,9 @@ public class GithubController {
     @GetMapping("/{username}/repos")
     public ResponseEntity<List<Repository>> getUserRepositories(@PathVariable String username) {
         List<Repository> repositories = githubClient.getUserRepositories(username);
+        if (repositories.isEmpty()) {
+            throw new GithubEmptyRepositoriesException();
+        }
         return ResponseEntity.ok(repositories);
     }
 
