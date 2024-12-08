@@ -11,6 +11,15 @@ public class User {
 
     public User() {}
 
+    public User(String login) {
+        this.login = login;
+    }
+
+    public User(String login, String url) {
+        this.login = login;
+        this.url = url;
+    }
+
     public String getLogin() {
         return login;
     }
