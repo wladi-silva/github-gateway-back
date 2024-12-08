@@ -12,6 +12,16 @@ public class Repository {
 
     public Repository() {}
 
+    public Repository(String name) {
+        this.name = name;
+    }
+
+    public Repository(String name, String url, String description) {
+        this.name = name;
+        this.url = url;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }
