@@ -7,7 +7,8 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 public class User {
 
     private String login;
-    private String url;
+    private String avatarUrl;
+    private String name;    
 
     public User() {}
 
@@ -15,9 +16,10 @@ public class User {
         this.login = login;
     }
 
-    public User(String login, String url) {
+    public User(String login, String avatarUrl, String name) {
         this.login = login;
-        this.url = url;
+        this.avatarUrl = avatarUrl;
+        this.name = name;
     }
 
     public String getLogin() {
@@ -28,12 +30,20 @@ public class User {
         this.login = login;
     }
 
-    public String getUrl() {
-        return url;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
